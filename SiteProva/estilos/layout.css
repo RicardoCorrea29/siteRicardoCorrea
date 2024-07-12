@@ -1,0 +1,86 @@
+body,p{
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem; 
+    font-style: italic; 
+    color: #373737;
+    text-align: center;
+}
+#Menu {
+    position: fixed; 
+    right: 0%;
+    top: 50%;
+    width: 8em;
+    margin-top: -2.5em;
+}
+.principal{
+    width: 50%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 25% 25%;
+    grid-template-rows: 50px 250px 150px; 
+    grid-template-areas: "inicio"
+                        "secao lateral"
+                        "rodape rodape";
+}
+header{
+    grid-area: inicio;
+    background-color:#ffffff;
+    text-align: left;
+}
+section{
+    grid-area: secao;
+    background-color: #ffffff;
+    text-align: justify;
+}
+aside{
+    grid-area:lateral;
+    background-color:  #ffffff;
+}
+footer{
+    grid-area: rodape;
+    display: flex; 
+    justify-content: space-evenly;
+}
+.secaof1, .secaof2, .secaof3{
+    width: 25%;
+    background-color:#ffffff;
+}
+.secaof2{
+    width: 50%;
+    margin: 0 2px;
+}
+.secaof3{
+    margin: 0;
+}
+@media(max-width:992px){
+    .principal{
+        grid-template-columns: 100%;
+        grid-template-areas: "cabecalho" "secao" "barra_lateral" "rodape";
+        text-align: center;
+    }
+    footer{
+        display: flex;
+        flex-wrap: wrap; 
+    }
+    .secaof1, .secaof2, .secaof3{
+        margin: 0;
+        border: solid 1px #fff;
+        width: 49%;
+    }
+    .secaof2{
+        width: 100%;
+        order:-1;
+    }
+}
+@media(max-width:768px){
+    body{
+        margin: 0 15px;
+    }
+    .principal, .secaof1, .secaof2, .secaof3{
+        width: 100%;
+    }
+    .secaof2{
+        order: initial;
+    }
+}
